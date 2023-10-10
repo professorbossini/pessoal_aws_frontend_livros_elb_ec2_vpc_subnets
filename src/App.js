@@ -34,7 +34,7 @@ function App() {
     <div className="container mt-5">
       <input
         className="form-control"
-        placeholder="Digite o IP (local, privado) da máquina Back End"
+        placeholder="Digite o Ip público da máquina Front End"
         value={backendUrl}
         onChange={e => setBackendUrl(e.target.value)}
       />
