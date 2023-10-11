@@ -3,7 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [backendUrl, setBackendUrl] = useState('');
+  const [url, setURL] = useState('');
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [edition, setEdition] = useState('');
@@ -11,7 +11,7 @@ function App() {
 
   const handleAddBook = async () => {
     try {
-      await axios.post("http://" + backendUrl + ':3000/livros', { titulo: title, autor: author, edicao: edition });
+      await axios.post("http://" + url + '/livros', { titulo: title, autor: author, edicao: edition });
       setTitle('');
       setAuthor('');
       setEdition('');
@@ -23,7 +23,7 @@ function App() {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get("http://" + backendUrl + ':3000/livros');
+      const response = await axios.get("http://" + url + '/livros');
       setBooks(response.data);
     } catch (error) {
       console.error("Erro ao buscar livros:", error);
@@ -35,8 +35,8 @@ function App() {
       <input
         className="form-control"
         placeholder="Digite o Ip público da máquina Front End"
-        value={backendUrl}
-        onChange={e => setBackendUrl(e.target.value)}
+        value={url}
+        onChange={e => setURL(e.target.value)}
       />
 
       <div className="mt-3 d-flex justify-content-between">
