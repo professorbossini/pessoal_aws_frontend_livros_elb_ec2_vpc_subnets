@@ -75,7 +75,7 @@ function App() {
       <ul className="list-group mt-3">
         {books.map(book => (
           <li key={book.id} className="list-group-item">
-            {book.titulo} - {book.autor} - Edição: {book.edicao}
+            Titulo: {book.titulo} - Autor: {book.autor} - Edição: {book.edicao}
           </li>
         ))}
       </ul>
