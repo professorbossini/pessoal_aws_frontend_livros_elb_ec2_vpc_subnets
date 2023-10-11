@@ -16,6 +16,7 @@ function App() {
       setAuthor('');
       setEdition('');
       fetchBooks();
+      console.log('post complete')
     } catch (error) {
       console.error("Erro ao adicionar livro:", error);
     }
@@ -25,6 +26,7 @@ function App() {
     try {
       const response = await axios.get("http://" + url + '/livros');
       setBooks(response.data);
+      console.log('fetchBooks: ' + JSON.stringify(response.data))
     } catch (error) {
       console.error("Erro ao buscar livros:", error);
     }
