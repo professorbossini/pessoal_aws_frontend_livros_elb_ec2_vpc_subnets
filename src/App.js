@@ -12,6 +12,7 @@ function App() {
   const handleAddBook = async () => {
     try {
       await axios.post("http://" + url + '/livros', { titulo: title, autor: author, edicao: edition });
+      console.log (title, edition, author)
       setTitle('');
       setAuthor('');
       setEdition('');
